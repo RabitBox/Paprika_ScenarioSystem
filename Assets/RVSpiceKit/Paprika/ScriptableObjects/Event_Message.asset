@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de4b3f8882cf5a4f8ed8e77211ed27f, type: 3}
-  m_Name: Event - Message
+  m_Name: Event_Message
   m_EditorClassIdentifier: 
   _name: 
   _message: 

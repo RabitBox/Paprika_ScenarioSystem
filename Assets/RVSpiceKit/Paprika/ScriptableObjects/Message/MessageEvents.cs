@@ -17,13 +17,14 @@ using UnityEngine;
 
 namespace RV.SpiceKit.Paprika
 {
+	[CreateAssetMenu(fileName = "Event_Message", menuName = "Paprika/Scriptable Objects/MessageEvent")]
 	public partial class MessageEvents : ScriptableObject
 	{
 		[NonSerialized] public Action<string> onChangeName;
-		[NonSerialized] public Action<string> onChangeMessage;
+		[NonSerialized] public Action<string> onChangeText;
 
 		[SerializeField] private string _name;
-		[SerializeField] private string _message;
+		[SerializeField] private string _text;
 
 		public string Name
 		{
@@ -34,13 +35,13 @@ namespace RV.SpiceKit.Paprika
 				onChangeName?.Invoke(value);
 			}
 		}
-		public string Message
+		public string Text
 		{
-			get => _message;
+			get => _text;
 			set
 			{
-				_message = value;
-				onChangeMessage?.Invoke(value);
+				_text = value;
+				onChangeText?.Invoke(value);
 			}
 		}
 	}
