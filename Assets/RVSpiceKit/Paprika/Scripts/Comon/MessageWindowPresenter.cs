@@ -27,13 +27,13 @@ namespace RV.SpiceKit.Paprika.Common
 		[SerializeField]
 		private MessageView _messageView;
 
-		private void Start()
+		private void OnEnable()
 		{
 			_messageEvents.onChangeName += _nameView.SetText;
 			_messageEvents.onChangeMessage += _messageView.SetText;
 		}
 
-		private void OnDestroy()
+		private void OnDisable()
 		{
 			_messageEvents.onChangeName -= _nameView.SetText;
 			_messageEvents.onChangeMessage -= _messageView.SetText;

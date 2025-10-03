@@ -20,14 +20,14 @@ namespace RV.SpiceKit.Paprika
 	public partial class MessageEvents : ScriptableObject
 	{
 		[NonSerialized] public Action<string> onChangeName;
-		[NonSerialized] public Action<string, bool> onChangeMessage;
+		[NonSerialized] public Action<string> onChangeMessage;
 
 		[SerializeField] private string _name;
 		[SerializeField] private string _message;
 
 		public string Name
 		{
-			get { return _name; }
+			get => _name;
 			set
 			{
 				_name = value;
@@ -36,32 +36,12 @@ namespace RV.SpiceKit.Paprika
 		}
 		public string Message
 		{
-			get { return _message; }
+			get => _message;
 			set
 			{
 				_message = value;
-				onChangeMessage?.Invoke(value, true);
+				onChangeMessage?.Invoke(value);
 			}
-		}
-
-		/// <summary>
-		/// メッセージをセット
-		/// </summary>
-		/// <param name="message">メッセージ</param>
-		public void SetMessage(in string message)
-		{
-			_message = message;
-			onChangeMessage?.Invoke(message, true);
-		}
-
-		/// <summary>
-		/// メッセージを追加
-		/// </summary>
-		/// <param name="message">メッセージ</param>
-		public void AddMessage(in string message)
-		{
-			_message += message;
-			onChangeMessage?.Invoke(message, false);
 		}
 	}
 }

@@ -21,7 +21,7 @@ namespace RV.SpiceKit.Paprika.Common
 		[SerializeField]
 		private TMPro.TextMeshProUGUI _textMeshPro;
 
-		public void SetText(string text, bool isReset)
+		public void SetText(string text)
 		{
 			_textMeshPro.text = text;
 		}
