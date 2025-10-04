@@ -12,24 +12,20 @@
 //    If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
 // 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 // 3. This notice may not be removed or altered from any source distribution.
-using RV.SpiceKit.Paprika.Common;
 using UnityEngine;
 
 namespace RV.SpiceKit.Paprika
 {
-	public class BacklogWindow : MonoBehaviour
+	public class BacklogEntryView : MonoBehaviour
 	{
-		[Header("Assets")]
-		[SerializeField] private BacklogObject _backlogObject;
+		[Header("Views")]
+		[SerializeField] private TMPro.TextMeshProUGUI _name;
+		[SerializeField] private TMPro.TextMeshProUGUI _text;
 
-		private void OnEnable()
+		public void SetEntry(BacklogEntry entry)
 		{
-			// 表示
-		}
-
-		private void OnDisable()
-		{
-			// 非表示
+			_name.text = entry.Name;
+			_text.text = entry.Text;
 		}
 	}
 }

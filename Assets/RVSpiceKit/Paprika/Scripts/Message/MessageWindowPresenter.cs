@@ -14,29 +14,29 @@
 // 3. This notice may not be removed or altered from any source distribution.
 using UnityEngine;
 
-namespace RV.SpiceKit.Paprika.Common
+namespace RV.SpiceKit.Paprika
 {
 	public class MessageWindowPresenter : MonoBehaviour
 	{
 		[Header("Assets")]
 		[SerializeField] private MessageEvents _messageEvents;
 
-		[Header("View Scripts")]
+		[Header("Views")]
 		[SerializeField]
 		private NameView _nameView;
 		[SerializeField]
-		private MessageView _messageView;
+		private TextView _textView;
 
 		private void OnEnable()
 		{
 			_messageEvents.onChangeName += _nameView.SetText;
-			_messageEvents.onChangeText += _messageView.SetText;
+			_messageEvents.onChangeText += _textView.SetText;
 		}
 
 		private void OnDisable()
 		{
 			_messageEvents.onChangeName -= _nameView.SetText;
-			_messageEvents.onChangeText -= _messageView.SetText;
+			_messageEvents.onChangeText -= _textView.SetText;
 		}
 	}
 }

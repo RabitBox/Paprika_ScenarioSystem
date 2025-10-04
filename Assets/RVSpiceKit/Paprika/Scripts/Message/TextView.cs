@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace RV.SpiceKit.Paprika
 {
-	public class NameView : MonoBehaviour
+	public class TextView : MonoBehaviour
 	{
 		[SerializeField]
 		private TMPro.TextMeshProUGUI _textMeshPro;

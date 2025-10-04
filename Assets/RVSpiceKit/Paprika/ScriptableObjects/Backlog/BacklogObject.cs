@@ -30,6 +30,7 @@ namespace RV.SpiceKit.Paprika
 		/// バックログの上限
 		/// </summary>
 		[SerializeField] private int _limit = 50;
+		public int Limit => _limit;
 
 		/// <summary>
 		/// ログ追加

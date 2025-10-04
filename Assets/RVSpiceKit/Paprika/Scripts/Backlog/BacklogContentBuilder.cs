@@ -13,17 +13,27 @@
 // 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 // 3. This notice may not be removed or altered from any source distribution.
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace RV.SpiceKit.Paprika.Common
+namespace RV.SpiceKit.Paprika
 {
-	public class MessageView : MonoBehaviour
+	public class BacklogContentBuilder : MonoBehaviour
 	{
-		[SerializeField]
-		private TMPro.TextMeshProUGUI _textMeshPro;
+		[Header("Assets")]
+		[SerializeField] private BacklogObject _backlogObject;
+		[SerializeField] private BacklogEntryView _contentPrefab;
 
-		public void SetText(string text)
+		[Header("Hierarchy")]
+		[SerializeField] private Transform _scrollViewContent;
+
+		private void OnEnable()
 		{
-			_textMeshPro.text = text;
+			// 表示
+		}
+
+		private void OnDisable()
+		{
+			// 非表示
 		}
 	}
 }
