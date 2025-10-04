@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 6052890387242335694}
   - component: {fileID: 8123918925875180455}
   m_Layer: 5
-  m_Name: Canvas - Paprika ADV
+  m_Name: Canvas - Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
