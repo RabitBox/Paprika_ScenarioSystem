@@ -18,8 +18,8 @@ namespace RV.SpiceKit.Paprika.Common
 {
 	public class MessageWindowPresenter : MonoBehaviour
 	{
-		[SerializeField]
-		private MessageEvents _messageEvents;
+		[Header("Assets")]
+		[SerializeField] private MessageEvents _messageEvents;
 
 		[Header("View Scripts")]
 		[SerializeField]
