@@ -23,8 +23,8 @@ namespace RV.SpiceKit.Paprika
 		/// <summary>
 		/// バックログデータ
 		/// </summary>
-		private Queue<BacklogEntry> _backlogEntries = new Queue<BacklogEntry>();
-		public Queue<BacklogEntry> BacklogEntries => _backlogEntries;
+		private Queue<DialogueEntry> _entries = new Queue<DialogueEntry>();
+		public Queue<DialogueEntry> Entries => _entries;
 
 		/// <summary>
 		/// バックログの上限
@@ -36,19 +36,19 @@ namespace RV.SpiceKit.Paprika
 		/// ログ追加
 		/// </summary>
 		/// <param name="entry"></param>
-		public void Enqueue(BacklogEntry entry)
+		public void Enqueue(DialogueEntry entry)
 		{
-			if (_backlogEntries.Count >= _limit)
+			if (_entries.Count >= _limit)
 			{
-				_backlogEntries.Dequeue();
+				_entries.Dequeue();
 			}
-			_backlogEntries.Enqueue(entry);
+			_entries.Enqueue(entry);
 		}
 
 		/// <summary>
 		/// ログリセット
 		/// </summary>
-		public void Clear() => _backlogEntries.Clear();
+		public void Clear() => _entries.Clear();
 
 		/// <summary>
 		/// ログの記録上限変更
@@ -59,9 +59,9 @@ namespace RV.SpiceKit.Paprika
 			_limit = newLimit;
 
 			// 上限が減った場合はシュリンクする
-			while (_backlogEntries.Count >= _limit)
+			while (_entries.Count >= _limit)
 			{
-				_backlogEntries.Dequeue();
+				_entries.Dequeue();
 			}
 		}
 	}

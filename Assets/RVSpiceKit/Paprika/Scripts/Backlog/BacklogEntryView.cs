@@ -22,7 +22,7 @@ namespace RV.SpiceKit.Paprika
 		[SerializeField] private TMPro.TextMeshProUGUI _name;
 		[SerializeField] private TMPro.TextMeshProUGUI _text;
 
-		public void SetEntry(BacklogEntry entry)
+		public void SetEntry(DialogueEntry entry)
 		{
 			_name.text = entry.Name;
 			_text.text = entry.Text;

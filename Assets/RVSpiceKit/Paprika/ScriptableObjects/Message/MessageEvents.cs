@@ -23,25 +23,15 @@ namespace RV.SpiceKit.Paprika
 		[NonSerialized] public Action<string> onChangeName;
 		[NonSerialized] public Action<string> onChangeText;
 
-		[SerializeField] private string _name;
-		[SerializeField] private string _text;
-
-		public string Name
+		[SerializeField] private DialogueEntry _dialogue;
+		public DialogueEntry Dialogue
 		{
-			get => _name;
+			get => _dialogue;
 			set
 			{
-				_name = value;
-				onChangeName?.Invoke(value);
-			}
-		}
-		public string Text
-		{
-			get => _text;
-			set
-			{
-				_text = value;
-				onChangeText?.Invoke(value);
+				_dialogue = value;
+				onChangeName?.Invoke(value.Name);
+				onChangeText?.Invoke(value.Text);
 			}
 		}
 	}

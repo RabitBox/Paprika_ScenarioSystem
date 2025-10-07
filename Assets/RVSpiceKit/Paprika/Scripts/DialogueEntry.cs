@@ -18,6 +18,7 @@ namespace RV.SpiceKit.Paprika
 	/// <summary>
 	/// 会話データエントリ
 	/// </summary>
+	[System.Serializable]
 	public partial struct DialogueEntry
 	{
 		/// <summary>
